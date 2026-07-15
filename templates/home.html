@@ -1,21 +1,173 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ProjectHub</title>
+
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+
+        body{
+            background:#f4f7fb;
+            color:#333;
+        }
+
+        nav{
+            background:white;
+            padding:20px 8%;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 2px 10px rgba(0,0,0,.08);
+        }
+
+        .logo{
+            font-size:28px;
+            font-weight:bold;
+            color:#2563eb;
+        }
+
+        nav a{
+            text-decoration:none;
+            margin-left:15px;
+            color:#333;
+            font-weight:600;
+            transition:.3s;
+        }
+
+        nav a:hover{
+            color:#2563eb;
+        }
+
+        .hero{
+            min-height:80vh;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+            text-align:center;
+            padding:40px;
+        }
+
+        .hero-content{
+            max-width:700px;
+        }
+
+        h1{
+            font-size:52px;
+            margin-bottom:20px;
+        }
+
+        .highlight{
+            color:#2563eb;
+        }
+
+        p{
+            font-size:18px;
+            color:#666;
+            line-height:1.7;
+            margin-bottom:35px;
+        }
+
+        .buttons{
+            display:flex;
+            justify-content:center;
+            gap:20px;
+        }
+
+        .btn{
+            padding:14px 30px;
+            border-radius:8px;
+            text-decoration:none;
+            font-size:16px;
+            font-weight:bold;
+            transition:.3s;
+        }
+
+        .primary{
+            background:#2563eb;
+            color:white;
+        }
+
+        .primary:hover{
+            background:#1d4ed8;
+        }
+
+        .secondary{
+            border:2px solid #2563eb;
+            color:#2563eb;
+        }
+
+        .secondary:hover{
+            background:#2563eb;
+            color:white;
+        }
+
+        footer{
+            background:white;
+            padding:20px;
+            text-align:center;
+            color:#777;
+            border-top:1px solid #ddd;
+        }
+    </style>
 </head>
+
 <body>
 
-<h1>Welcome to ProjectHub</h1>
+<nav>
 
-<p>
-    ProjectHub is a project management platform built with Django.
-</p>
+    <div class="logo">
+        ProjectHub
+    </div>
 
-<a href="{% url 'register' %}">Register</a>
+    <div>
+        <a href="{% url 'login' %}">Login</a>
+        <a href="{% url 'register' %}">Register</a>
+    </div>
 
-|
+</nav>
 
-<a href="{% url 'login' %}">Login</a>
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>
+            Manage Projects <span class="highlight">Smarter</span>
+        </h1>
+
+        <p>
+            ProjectHub is a modern Django-powered project management platform.
+            Create projects, collaborate with your team, assign tasks, manage
+            user roles, and securely control access using custom middleware.
+        </p>
+
+        <div class="buttons">
+
+            <a class="btn primary" href="{% url 'register' %}">
+                Get Started
+            </a>
+
+            <a class="btn secondary" href="{% url 'login' %}">
+                Login
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<footer>
+
+    © 2026 ProjectHub • Built with Django
+
+</footer>
 
 </body>
 </html>

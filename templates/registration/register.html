@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Register | ProjectHub</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+
+    background:#f4f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+    padding:40px;
+
+}
+
+.card{
+
+    width:520px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+h1{
+
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+label{
+
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+
+}
+
+input,
+select{
+
+    width:100%;
+    padding:12px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+
+}
+
+input:focus,
+select:focus{
+
+    outline:none;
+    border-color:#2563eb;
+
+}
+
+button{
+
+    width:100%;
+    padding:13px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.errorlist{
+
+    color:red;
+    list-style:none;
+    margin-bottom:15px;
+
+}
+
+.footer{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+.footer a{
+
+    color:#2563eb;
+    text-decoration:none;
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="card">
+
+<h1>Create Account</h1>
+
+<p class="subtitle">
+Join ProjectHub today
+</p>
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.non_field_errors }}
+
+{% for field in form %}
+
+<p>
+
+{{ field.label_tag }}
+
+{{ field }}
+
+{{ field.errors }}
+
+</p>
+
+{% endfor %}
+
+<button type="submit">
+
+Create Account
+
+</button>
+
+</form>
+
+<div class="footer">
+
+Already have an account?
+
+<a href="{% url 'login' %}">
+Login
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

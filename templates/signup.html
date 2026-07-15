@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up</title>
+</head>
+<body>
+
+<h2>Create Account</h2>
+
+<form method="POST">
+    {% csrf_token %}
+
+    {{ form.first_name.label }}
+    {{ form.first_name }}
+
+    <br><br>
+
+    {{ form.last_name.label }}
+    {{ form.last_name }}
+
+    <br><br>
+
+    {{ form.email.label }}
+    {{ form.email }}
+
+    <br><br>
+
+    {{ form.role.label }}
+    {{ form.role }}
+
+    <br><br>
+
+    {{ form.password1.label }}
+    {{ form.password1 }}
+
+    <br><br>
+
+    {{ form.password2.label }}
+    {{ form.password2 }}
+
+    <br><br>
+
+    <button type="submit">
+        Register
+    </button>
+
+</form>
+
+</body>
+</html>

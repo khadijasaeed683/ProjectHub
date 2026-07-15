@@ -1,0 +1,5 @@
+Django
+redis
+pre-commit
+black
+isort

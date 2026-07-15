@@ -26,13 +26,9 @@ class CustomUserAdmin(UserAdmin):
     )
 
     # Search bar
-    search_fields = (
-        "email",
-    )
+    search_fields = ("email",)
 
-    ordering = (
-        "email",
-    )
+    ordering = ("email",)
 
     # Sections shown when editing an existing user
     fieldsets = (
@@ -45,7 +41,6 @@ class CustomUserAdmin(UserAdmin):
                 )
             },
         ),
-
         (
             "Personal Information",
             {
@@ -56,7 +51,6 @@ class CustomUserAdmin(UserAdmin):
                 )
             },
         ),
-
         (
             "Permissions",
             {
@@ -69,7 +63,6 @@ class CustomUserAdmin(UserAdmin):
                 )
             },
         ),
-
         (
             "Important Dates",
             {

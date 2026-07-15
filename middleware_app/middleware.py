@@ -11,13 +11,7 @@ class RequestLoggingMiddleware:
 
     def __call__(self, request):
         print(">>> Logging Middleware Executed <<<")
-
         ip = request.META.get("REMOTE_ADDR")
-
-        logger.info(
-            f"{datetime.now()} | {ip} | {request.method} | {request.path}"
-        )
-
+        logger.info(f"{datetime.now()} | {ip} | {request.method} | {request.path}")
         response = self.get_response(request)
-
         return response

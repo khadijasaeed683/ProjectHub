@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Login | ProjectHub</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+body{
+    background:#f4f7fb;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.card{
+
+    width:420px;
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+h1{
+
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:10px;
+
+}
+
+.subtitle{
+
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+
+}
+
+label{
+
+    display:block;
+    margin-bottom:6px;
+    font-weight:bold;
+
+}
+
+input{
+
+    width:100%;
+    padding:12px;
+    margin-bottom:18px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    font-size:15px;
+
+}
+
+input:focus{
+
+    outline:none;
+    border-color:#2563eb;
+
+}
+
+button{
+
+    width:100%;
+    padding:13px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+
+}
+
+button:hover{
+
+    background:#1d4ed8;
+
+}
+
+.errorlist{
+
+    color:red;
+    list-style:none;
+    margin-bottom:15px;
+
+}
+
+.footer{
+
+    margin-top:20px;
+    text-align:center;
+
+}
+
+.footer a{
+
+    text-decoration:none;
+    color:#2563eb;
+
+}
+
+</style>
+
+</head>
+<body>
+
+<div class="card">
+
+<h1>ProjectHub</h1>
+
+<p class="subtitle">
+Login to your account
+</p>
+
+<form method="post">
+
+{% csrf_token %}
+
+{{ form.non_field_errors }}
+
+{% for field in form %}
+
+<p>
+
+{{ field.label_tag }}
+
+{{ field }}
+
+{{ field.errors }}
+
+</p>
+
+{% endfor %}
+
+<button type="submit">
+Login
+</button>
+
+</form>
+
+<div class="footer">
+
+Don't have an account?
+
+<a href="{% url 'register' %}">
+Register
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>
